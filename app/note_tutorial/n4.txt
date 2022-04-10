@@ -1,0 +1,18 @@
+-membuat variable untuk menampung controller, method, dan parameter default
+-membuat method di construct untuk mencari controller sesuai permintaan di url (jika ada) dan mengubah nilai variable controller, lalu menghapus controller di url
+  -perlu ada pengkondisian untuk mengubah url menjadi nilai default jika url kosong/null, agar tidak error
+-membuat method di construct untuk mencari method pada controller sesuai permintaan di url (jika ada) dan mengubah nilai variable method, lalu menghapus mmethod di url
+-membuat method di construct untuk mengubah nilai variable parameter yang akan dikirimkan (jika ada)
+-memanggil fungsi php untuk mengakses controller, method, dan mengirimkan parameter sesuai dengan variable yang sudah ditentukan
+
+
+alur aplikasi: 
+1. user masuk, diarahkan ke default controller, method (home/index).
+2. user menuju halaman lain, halaman yang ingin dituju masuk url
+3. di app, menjalankan construct untuk mengambil url
+4. menjalankan method untuk mengambil url di array pertama(controller)
+5. mengubah variable controller jika file yang ingin dituju ada
+6. memanggil file
+7. cek method di url, masukin variable kalo ada
+8. cek param di url, masukin variable kalo ada
+9. panggil controller, fungsi,sama kirim param pake call_user_func_array

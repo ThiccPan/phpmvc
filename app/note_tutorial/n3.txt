@@ -1,0 +1,9 @@
+-bikin method untuk ngambil dan ngeparse url
+-panggil method di construct App, terus di vardump
+-buat file .htaccess di folder App
+-masukkan Config -Indexes di htaccess
+-buat file htaccess di folder public
+-masukkan Config -multiviews dll di htaccesss
+-amankan method buat ngambil dan ngeparse url
+	-pake rtrim, filter_var(url, filter_sanitize_url
+	-dipisah menjadi array pakai explode

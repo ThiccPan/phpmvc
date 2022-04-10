@@ -1,0 +1,2 @@
+1. buat file view di folder views -> home -> index.php
+2. panggil view di controllers/Home.php dengan alamat view sesuai langkah 1

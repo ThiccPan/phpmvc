@@ -1,0 +1,8 @@
+-folder public bisa diakses user
+-folder app menyimpan aplikasi utama
+  -core menyimpan aplikasi inti (routing, etc)
+  -controleer
+  -model
+  -views
+
+membuat file init untuk memanggil seluruh aplikasi mvc

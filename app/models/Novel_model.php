@@ -1,22 +1,23 @@
 <?php 
   class Novel_model{
-      private $dbh; //database handler
-      private $stmt; //query statement
+    private $table = "novel";
+    private $db;
 
       public function __construct() {
-        $dsn = 'mysql:host=localhost;dbname=phpmvc';
-
-        try {
-          $this->dbh = new PDO($dsn,'root','');
-        } catch (PDOException $e) {
-          die($e->getMessage());
-        }
+        $this->db = new Database();
       }
+ 
       public function getAllNovel()
       {
-        $this->stmt = $this->dbh->prepare('SELECT * FROM novel');
-        $this->stmt->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        $this->db->query("SELECT * FROM " . $this->table);
+        return $this->db->resultSet();
+      }
+
+      public function getNovelByID($id)
+      {
+        $this->db->query("SELECT * FROM " . $this->table . " WHERE id=:id ");
+        $this->db->bind('id',$id);
+        return $this->db->single();
       }
   }
 

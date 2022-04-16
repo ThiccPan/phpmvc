@@ -1,0 +1,5 @@
+1. error waktu bind value di Database.php
+  alasan = salah value params (id bukan db)
+  solusi = menganti nama syntax
+
+2. 

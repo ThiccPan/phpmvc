@@ -6,14 +6,14 @@ class App {
   protected $params = [];
 
   public function __construct() { //default when user first access webpage
-    $url = $this->parseURL();//mengambil url
+    $url = $this->parseURL();
     
-    if ($url === null) {//mengatasi error array offset null, mencari file controller dengan nilai null menghasilkan error jadi nilai $url dijadikan $controller
-      $url = [$this->controller];//array 0 dijadikan nilai default
+    if ($url === null) {//mengatasi error array offset null kalau url gk dimasukkan
+      $url = [$this->controller];
     }
 
-    if (file_exists('../app/controllers/' . $url[0] . '.php')) { //cek apakah controller yang ingin di akses ada pada aplikasi
-      $this->controller = $url[0];//mengubah variable controller default menjadi file controller yang ingin diakses/kata pertama di url
+    if (file_exists('../app/controllers/' . $url[0] . '.php')) { //cek adanya controller yang dituju
+      $this->controller = $url[0];
       unset($url[0]);//menghilangkan controller di url, sehingga array hanya memiliki parameter agar mudah mengakses parameternya
     }
       

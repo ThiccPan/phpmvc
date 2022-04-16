@@ -35,16 +35,15 @@
       </div>
       
       <div class="modal-body">
-        <form action="<?= BASEURL; ?>controllers/addNovel" method="post">
-
+        <form action="<?= BASEURL; ?>Novel/addNovel" method="post">
           <div class="input-group mb-3">
             <span class="input-group-text" id="title-addon">Title </span>
             <input type="text" class="form-control" aria-label="novel-title" aria-describedby="title-addon" name="title">
           </div>
 
           <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Options</label>
-            <select class="form-select" id="Status">
+            <label class="input-group-text" for="inputGroupSelect01">Status</label>
+            <select class="form-select" id="status" name="status">
               <option value="Reading">Reading</option>
               <option value="Finished">Finished</option>
               <option value="Dropped">Dropped</option>
@@ -57,16 +56,14 @@
           </div>
 
           <div class="input-group mb-3">
-            <span class="input-group-text" id="link-addon">Current chapter</span>
+            <span class="input-group-text" id="link-addon">Novel link</span>
             <input type="text" class="form-control" aria-label="novel-link" aria-describedby="link-addon" name="link">
           </div>
-
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </form>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit/button>
       </div>
     </div>
   </div>

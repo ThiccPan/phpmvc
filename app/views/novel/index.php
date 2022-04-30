@@ -4,7 +4,10 @@
     <div class="row">
       <div class="col-6">
         <h2 class="mb-lg-4">Daftar Novel</h2>
-        
+
+        <!-- Flash Message -->
+        <?php Flasher::sendFlash(); ?>
+
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Add new novel

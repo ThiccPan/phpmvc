@@ -28,8 +28,17 @@
       $link = $_POST["link"];
 
       if ($this->model('Novel_model')->addNovel($id,$title,$status,$cur_chapter,$link) > 0) {
-        header("Location:" . BASEURL . "views/novel/index.phpp");
+        $msg = "sucessfull";
+        $action = "Add";
+        $type = "alert-success";
+        Flasher::setFlash($msg, $action, $type);
+        header("Location:" . BASEURL . "novel");
         exit;
+      } else {
+        $msg = "failed";
+        $action = "Add";
+        $type = "alert-warning";
+        Flasher::setFlash($msg, $action, $type);
       }
     }
   }
